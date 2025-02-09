@@ -16,6 +16,9 @@ public class Clase01_Automovil {
 
         System.out.println();
 
+        // Cambiamos el coloR patente CON GETTER & SETTER NO CON EL CONSTRUCTOR
+        Clase01_01_Automovil.setColorPatente("Rojo");
+
         System.out.println(auto.detalle() + "\n" + auto.acelerando(3000) + "\n" + 
         auto.frenar() + "\nKilometros por galón " + auto.consumo(300, 0.60f) + "\nKilometros por galón " + 
         auto.consumo(300, 60));

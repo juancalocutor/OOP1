@@ -1,14 +1,25 @@
 public class Clase01_01_Automovil {
 
+    // Aquí vienen los atributos del objeto como variables.
+    // Pueden ser publicas, estáticas, privadas.
+    private int id;
     private String marca, modelo, anio, color;
+    private static String colorPatente = "Naranja"; // la variable estática pertenece a la clase no al objeto ***
     private double cilindraje;
     private int tanque;
+    private static int ultimoId;
+
 
     /* Primero hicimos un Get y Set y al final se diseñó un constructor 
      * la idea es que sean menos líneas de código
     */
 
+    public Clase01_01_Automovil() {
+        this.id = ++ultimoId;
+    }
+
     public Clase01_01_Automovil(String marca, String modelo, String anio, String color, double cilindraje, int tanque) {
+        this();
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
@@ -17,9 +28,31 @@ public class Clase01_01_Automovil {
         this.tanque = tanque;
     }
 
+    
+
+    // Para acceder desde la clase a la variable privada y estática se hace por un Getter & Setter NO POR CONSTRUCTOR
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static String getColorPatente() {
+        return colorPatente;
+    }
+    
+    public static void setColorPatente(String colorPatente) {
+        Clase01_01_Automovil.colorPatente = colorPatente;
+    }
+
     public String detalle() {
-        return "Fabricante = " + this.marca + "\nModelo = " + this.modelo +
-                "\nAño = " + this.anio + "\nCilindraje = " + this.cilindraje +
+        return  "Auto Id = " + this.id +
+                "\nFabricante = " + this.marca + "\nModelo = " + this.modelo +
+                "\nAño = " + this.anio + 
+                "\nColor Patente = " + Clase01_01_Automovil.colorPatente + // *** Se accede a la variable estática a través de la clase
+                "\nCilindraje = " + this.cilindraje +
                 "\nColor = " + this.color;
     }
 
