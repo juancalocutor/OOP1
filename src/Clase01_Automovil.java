@@ -71,5 +71,25 @@ public class Clase01_Automovil {
         System.out.println("El Mazda y el carro tienen el mismo color y son del mismo año? " + (mazda.equals(carro)));
 
         System.out.println();
+
+        System.out.println("===== TIPOS DE VEHÍCULOS RELACIONADOS =====");
+
+        System.out.println();
+
+        Tipo[] tipos = Tipo.values();
+
+        for (Tipo tipo : tipos) {
+            System.out.print(tipo + " ");
+            System.out.println();
+        }
+
+        System.out.println();
+
+        for (int i = 0; i < tipos.length; i++) {
+            System.out.print(tipos[i] + " ");
+            System.out.println();
+        }
+
+        System.out.println();
     }
 }
